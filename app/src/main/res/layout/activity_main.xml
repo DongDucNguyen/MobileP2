@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/view_identity" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="20dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/main_title" android:textSize="28sp" android:textStyle="bold" android:textColor="@color/ink" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="@string/main_subtitle" android:textColor="@color/muted" android:textSize="14sp" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="22dp" android:orientation="horizontal" android:gravity="center_vertical">
+            <EditText android:id="@+id/searchInput" style="@style/FormField"
+                android:layout_width="0dp" android:layout_weight="1" android:hint="@string/search_hint"
+                android:inputType="text" android:imeOptions="actionSearch" android:maxLength="100" android:autofillHints="" />
+            <Button android:id="@+id/searchButton" style="@style/PrimaryButton"
+                android:layout_width="wrap_content" android:layout_marginStart="8dp" android:text="@string/search" />
+        </LinearLayout>
+        <TextView android:id="@+id/countText" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="22dp" android:textColor="@color/primary" android:textSize="12sp" android:textStyle="bold" android:letterSpacing="0.05" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="@string/list_hint" android:textColor="@color/muted" android:textSize="12sp" />
+    </LinearLayout>
+    <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <ListView android:id="@+id/employeeList" android:layout_width="match_parent" android:layout_height="match_parent"
+            android:paddingStart="20dp" android:paddingEnd="20dp" android:paddingBottom="8dp"
+            android:clipToPadding="false" android:divider="@android:color/transparent" android:dividerHeight="10dp" />
+        <LinearLayout android:id="@+id/emptyState" android:layout_width="match_parent" android:layout_height="match_parent"
+            android:gravity="center" android:orientation="vertical" android:padding="28dp" android:visibility="gone">
+            <ImageView android:layout_width="72dp" android:layout_height="72dp" android:src="@drawable/ic_people" android:importantForAccessibility="no" />
+            <TextView android:id="@+id/emptyTitle" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="18dp" android:gravity="center" android:text="@string/empty_title" android:textSize="20sp" android:textStyle="bold" android:textColor="@color/ink" />
+            <TextView android:id="@+id/emptyMessage" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" android:gravity="center" android:text="@string/empty_message" android:textSize="14sp" android:textColor="@color/muted" />
+        </LinearLayout>
+    </FrameLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@color/surface" android:padding="16dp" android:elevation="6dp">
+        <Button android:id="@+id/addButton" style="@style/PrimaryButton" android:layout_width="match_parent" android:text="@string/add_employee" />
+    </LinearLayout>
+</LinearLayout>

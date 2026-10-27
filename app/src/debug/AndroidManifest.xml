@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Chỉ có trong bản debug; chạy thủ công bằng adb để nạp hồ sơ mẫu. -->
+    <instrumentation
+        android:name="vn.edu.nhansu.demo.DemoSeedInstrumentation"
+        android:targetPackage="vn.edu.nhansu"
+        android:label="Nạp 50 nhân sự mẫu" />
+</manifest>
